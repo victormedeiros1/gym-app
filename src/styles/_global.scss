@@ -1,0 +1,69 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-image: url('@/assets/images/background1920x1080.jpg');
+  background-size: cover;
+  background-attachment: fixed;
+  padding: 0;
+  margin: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  color: $dark;
+  margin: 0;
+  padding: 0;
+}
+
+// Menubar
+.menubar {
+  .p-menubar-root-list {
+    border: 0;
+  }
+
+  .p-menuitem {
+    margin: 0;
+
+    .p-menuitem-icon {
+      color: var(--gray-700);
+    }
+
+    .p-menuitem-text {
+      font-size: $fs-14;
+    }
+  }
+}
+
+// MultiSelect
+.p-multiselect {
+  .p-multiselect-label {
+    padding: 0.4375rem 0.6563rem; // 7px 10.5px
+  }
+}
+
+.p-multiselect-panel {
+  .p-multiselect-header {
+    .p-multiselect-filter {
+      font-size: $fs-14;
+      padding: 0.4375rem 0.6563rem; // 7px 10.5px
+      padding-right: $p-32;
+    }
+  }
+
+  .p-multiselect-items-wrapper {
+    .p-multiselect-empty-message {
+      font-size: $fs-14;
+    }
+
+    .p-multiselect-item {
+      font-size: $fs-14;
+    }
+  }
+}
