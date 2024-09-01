@@ -19,6 +19,7 @@
       <WorkoutForm
         v-for="workout in day.workouts"
         :key="workout.id"
+        :dayId="day.id"
         :workout="workout"
       />
 

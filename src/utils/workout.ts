@@ -1,8 +1,8 @@
-import { Day } from '@/types/workout'
+import { WorkoutWeek } from '@/types/workout'
 
-export const initialStateOfWorkouts: Day[] = [
-  {
-    id: 0,
+export const initialStateOfWorkouts: WorkoutWeek = {
+  monday: {
+    id: 'monday',
     name: 'Segunda-feira',
     workouts: [
       {
@@ -19,34 +19,34 @@ export const initialStateOfWorkouts: Day[] = [
       }
     ]
   },
-  {
-    id: 1,
+  tuesday: {
+    id: 'tuesday',
     name: 'Terça-feira',
     workouts: []
   },
-  {
-    id: 2,
+  wednesday: {
+    id: 'wednesday',
     name: 'Quarta-feira',
     workouts: []
   },
-  {
-    id: 3,
+  thursday: {
+    id: 'thursday',
     name: 'Quinta-feira',
     workouts: []
   },
-  {
-    id: 4,
+  friday: {
+    id: 'friday',
     name: 'Sexta-feira',
     workouts: []
   },
-  {
-    id: 5,
+  saturday: {
+    id: 'saturday',
     name: 'Sábado',
     workouts: []
   },
-  {
-    id: 6,
+  sunday: {
+    id: 'sunday',
     name: 'Domingo',
     workouts: []
   }
-]
+}

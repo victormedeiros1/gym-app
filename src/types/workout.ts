@@ -5,18 +5,19 @@ export interface Workout {
   repetitions: number
 }
 
+export type DayId = keyof WorkoutWeek
 export interface Day {
-  id: number
+  id: DayId
   name: string
   workouts: Workout[]
 }
 
 export interface WorkoutWeek {
-  monday: Workout[]
-  tuesday: Workout[]
-  wednesday: Workout[]
-  thursday: Workout[]
-  friday: Workout[]
-  saturday: Workout[]
-  sunday: Workout[]
+  monday: Day
+  tuesday: Day
+  wednesday: Day
+  thursday: Day
+  friday: Day
+  saturday: Day
+  sunday: Day
 }
