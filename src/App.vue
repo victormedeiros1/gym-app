@@ -1,7 +1,7 @@
 <template>
   <Container>
     <div class="week-of-workout">
-      <Day v-for="{ id, name } in workouts" :key="id" :name="name" />
+      <Day v-for="day in workouts" :key="day.id" :day="day" />
     </div>
   </Container>
 </template>

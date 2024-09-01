@@ -2,7 +2,7 @@
   <div class="day">
     <div class="dropdown">
       <button class="dropdown__header" @click="toggleExpandDropdown">
-        <h2 class="dropdown__label">{{ name }}</h2>
+        <h2 class="dropdown__label">{{ day.name }}</h2>
         <span>
           <i
             class="dropdown__arrow pi pi-angle-down"
@@ -16,7 +16,11 @@
       class="dropdown__body"
       :class="isExpanded ? 'expanded' : 'not-expanded'"
     >
-      <Workout />
+      <WorkoutForm
+        v-for="workout in day.workouts"
+        :key="workout.id"
+        :workout="workout"
+      />
 
       <div class="dropdown__footer">
         <button class="dropdown__submit">Adicionar</button>
@@ -26,12 +30,13 @@
 </template>
 
 <script setup lang="ts">
-  import Workout from '@/components/Workout/Workout.vue'
+  import WorkoutForm from '@/components/WorkoutForm/WorkoutForm.vue'
+  import { Day } from '@/types/workout'
 
   import { ref } from 'vue'
 
   interface Props {
-    name: string
+    day: Day
   }
 
   defineProps<Props>()

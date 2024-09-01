@@ -8,7 +8,7 @@ export interface Workout {
 export interface Day {
   id: number
   name: string
-  Workouts: Workout[]
+  workouts: Workout[]
 }
 
 export interface WorkoutWeek {
