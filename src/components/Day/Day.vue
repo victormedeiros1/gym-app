@@ -10,14 +10,14 @@
       </span>
     </button>
 
-    <div
-      class="content"
-      :class="isExpanded ? 'expanded' : 'not-expanded'"
-    ></div>
+    <div class="content" :class="isExpanded ? 'expanded' : 'not-expanded'">
+      <Exercise />
+    </div>
   </div>
 </template>
 
 <script setup lang="ts">
+  import Exercise from '@/components/Exercise/Exercise.vue'
   import { ref } from 'vue'
 
   interface Props {
@@ -56,6 +56,7 @@
 
     .content {
       overflow: hidden;
+      padding: 0 $p-16;
     }
 
     .expanded {

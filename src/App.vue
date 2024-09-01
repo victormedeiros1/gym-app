@@ -1,18 +1,29 @@
 <template>
   <Container>
     <div class="days">
-      <Day name="Segunda-feira" />
-      <Day name="Terça-feira" />
-      <Day name="Quarta-feira" />
-      <Day name="Quinta-feira" />
-      <Day name="Sexta-feira" />
+      <div v-for="day in days" :key="day.id">
+        <Day :name="day.name" />
+      </div>
     </div>
   </Container>
 </template>
 
 <script setup lang="ts">
   import Container from '@/components/Container/Container.vue'
-  import Day from '@/components/Day/Day.vue'
+  import Day from './components/Day/Day.vue'
+  import { ref } from 'vue'
+
+  interface Days {
+    id: number
+    name: string
+  }
+
+  const days = ref<Days[]>([
+    {
+      id: 1,
+      name: 'Segunda'
+    }
+  ])
 </script>
 
 <style scoped lang="scss">
