@@ -5,6 +5,12 @@ export interface Workout {
   repetitions: number
 }
 
+export interface Day {
+  id: number
+  name: string
+  Workouts: Workout[]
+}
+
 export interface WorkoutWeek {
   monday: Workout[]
   tuesday: Workout[]

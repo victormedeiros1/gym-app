@@ -5,10 +5,6 @@
       <input class="workout__input workout__input--series" />
       <input class="workout__input workout__input--repetitions" />
     </div>
-
-    <div class="workout__footer">
-      <button class="workout__submit">Adicionar</button>
-    </div>
   </div>
 </template>
 
@@ -36,23 +32,6 @@
       &--series,
       &--repetitions {
         width: 50px;
-      }
-    }
-
-    &__footer {
-      margin-top: 16px;
-    }
-
-    &__submit {
-      width: 100%;
-      color: $gray-100;
-      border: none;
-      cursor: pointer;
-      background-color: $gray-800;
-      padding: $p-8;
-
-      &:hover {
-        background-color: $gray-900;
       }
     }
   }

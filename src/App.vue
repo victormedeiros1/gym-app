@@ -1,9 +1,7 @@
 <template>
   <Container>
-    <div class="days">
-      <div v-for="day in days" :key="day.id">
-        <Day :name="day.name" />
-      </div>
+    <div class="week-of-workout">
+      <Day v-for="{ id, name } in workouts" :key="id" :name="name" />
     </div>
   </Container>
 </template>
@@ -11,23 +9,14 @@
 <script setup lang="ts">
   import Container from '@/components/Container/Container.vue'
   import Day from './components/Day/Day.vue'
-  import { ref } from 'vue'
 
-  interface Days {
-    id: number
-    name: string
-  }
+  import { useWorkoutsStore } from '@/stores/workouts'
 
-  const days = ref<Days[]>([
-    {
-      id: 1,
-      name: 'Segunda'
-    }
-  ])
+  const { workouts } = useWorkoutsStore()
 </script>
 
 <style scoped lang="scss">
-  .days {
+  .week-of-workout {
     display: flex;
     flex-direction: column;
     gap: $p-16;
