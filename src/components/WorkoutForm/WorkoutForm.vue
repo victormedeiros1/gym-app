@@ -13,24 +13,31 @@
         class="workout-form__input workout-form__input--repetitions"
         v-model="dataOfWorkout.repetitions"
       />
+
+      <button @click="removeWorkout(dayId, workout.id)">
+        <i class="pi pi-trash"></i>
+      </button>
     </div>
   </div>
 </template>
-v-model=""
 
 <script setup lang="ts">
-  import { Workout } from '@/types/workout'
+  import { DayId, Workout } from '@/types/workout'
+
+  import { useWorkoutsStore } from '@/stores/workouts'
 
   import { ref } from 'vue'
 
   interface Props {
+    dayId: DayId
     workout: Workout
   }
+
+  const { removeWorkout } = useWorkoutsStore()
 
   const props = defineProps<Props>()
 
   const dataOfWorkout = ref<Workout>(props.workout)
-  console.log(dataOfWorkout.value)
 </script>
 
 <style scoped lang="scss">

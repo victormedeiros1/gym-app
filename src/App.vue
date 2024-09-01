@@ -11,8 +11,9 @@
   import Day from './components/Day/Day.vue'
 
   import { useWorkoutsStore } from '@/stores/workouts'
+  import { storeToRefs } from 'pinia'
 
-  const { workouts } = useWorkoutsStore()
+  const { workouts } = storeToRefs(useWorkoutsStore())
 </script>
 
 <style scoped lang="scss">
