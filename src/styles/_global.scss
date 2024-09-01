@@ -22,48 +22,13 @@ p {
   padding: 0;
 }
 
-// Menubar
-.menubar {
-  .p-menubar-root-list {
-    border: 0;
-  }
-
-  .p-menuitem {
-    margin: 0;
-
-    .p-menuitem-icon {
-      color: var(--gray-700);
-    }
-
-    .p-menuitem-text {
-      font-size: $fs-14;
-    }
-  }
+// Utils
+.rotate-0 {
+  transform: rotate(0deg);
+  transition: 200ms;
 }
 
-// MultiSelect
-.p-multiselect {
-  .p-multiselect-label {
-    padding: 0.4375rem 0.6563rem; // 7px 10.5px
-  }
-}
-
-.p-multiselect-panel {
-  .p-multiselect-header {
-    .p-multiselect-filter {
-      font-size: $fs-14;
-      padding: 0.4375rem 0.6563rem; // 7px 10.5px
-      padding-right: $p-32;
-    }
-  }
-
-  .p-multiselect-items-wrapper {
-    .p-multiselect-empty-message {
-      font-size: $fs-14;
-    }
-
-    .p-multiselect-item {
-      font-size: $fs-14;
-    }
-  }
+.rotate-180 {
+  transform: rotate(180deg);
+  transition: 200ms;
 }

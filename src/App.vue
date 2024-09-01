@@ -1,10 +1,12 @@
 <template>
   <Container>
-    <Day name="Segunda-feira" />
-    <Day name="Terça-feira" />
-    <Day name="Quarta-feira" />
-    <Day name="Quinta-feira" />
-    <Day name="Sexta-feira" />
+    <div class="days">
+      <Day name="Segunda-feira" />
+      <Day name="Terça-feira" />
+      <Day name="Quarta-feira" />
+      <Day name="Quinta-feira" />
+      <Day name="Sexta-feira" />
+    </div>
   </Container>
 </template>
 
@@ -13,4 +15,10 @@
   import Day from '@/components/Day/Day.vue'
 </script>
 
-<style scoped lang="scss"></style>
+<style scoped lang="scss">
+  .days {
+    display: flex;
+    flex-direction: column;
+    gap: $p-16;
+  }
+</style>
