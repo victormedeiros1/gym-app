@@ -1,13 +1,13 @@
 <template>
-  <div class="exercise">
-    <div class="exercise__group">
-      <input class="exercise__input exercise__input--name" />
-      <input class="exercise__input exercise__input--series" />
-      <input class="exercise__input exercise__input--repetitions" />
+  <div class="workout">
+    <div class="workout__group">
+      <input class="workout__input workout__input--name" />
+      <input class="workout__input workout__input--series" />
+      <input class="workout__input workout__input--repetitions" />
     </div>
 
-    <div class="exercuse__footer">
-      <button class="exercise__submit">Adicionar</button>
+    <div class="workout__footer">
+      <button class="workout__submit">Adicionar</button>
     </div>
   </div>
 </template>
@@ -15,7 +15,7 @@
 <script setup lang="ts"></script>
 
 <style scoped lang="scss">
-  .exercise {
+  .workout {
     display: flex;
     flex-direction: column;
     gap: $g-16;

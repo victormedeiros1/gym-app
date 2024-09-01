@@ -11,13 +11,13 @@
     </button>
 
     <div class="content" :class="isExpanded ? 'expanded' : 'not-expanded'">
-      <Exercise />
+      <Workout />
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
-  import Exercise from '@/components/Exercise/Exercise.vue'
+  import Workout from '@/components/Workout/Workout.vue'
   import { ref } from 'vue'
 
   interface Props {
