@@ -1,5 +1,5 @@
 export interface Workout {
-  id: number
+  id: string
   name: string
   series: number
   repetitions: number

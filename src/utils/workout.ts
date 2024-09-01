@@ -4,20 +4,7 @@ export const initialStateOfWorkouts: WorkoutWeek = {
   monday: {
     id: 'monday',
     name: 'Segunda-feira',
-    workouts: [
-      {
-        id: 0,
-        name: 'Pushups',
-        series: 3,
-        repetitions: 10
-      },
-      {
-        id: 1,
-        name: 'Squats',
-        series: 3,
-        repetitions: 10
-      }
-    ]
+    workouts: []
   },
   tuesday: {
     id: 'tuesday',

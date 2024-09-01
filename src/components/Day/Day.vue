@@ -24,7 +24,7 @@
       />
 
       <div class="dropdown__footer">
-        <button class="dropdown__submit">Adicionar</button>
+        <button class="dropdown__submit" @click="addWorkout(day.id)">+</button>
       </div>
     </div>
   </div>
@@ -32,6 +32,7 @@
 
 <script setup lang="ts">
   import WorkoutForm from '@/components/WorkoutForm/WorkoutForm.vue'
+  import { useWorkoutsStore } from '@/stores/workouts'
   import { Day } from '@/types/workout'
 
   import { ref } from 'vue'
@@ -39,6 +40,8 @@
   interface Props {
     day: Day
   }
+
+  const { addWorkout } = useWorkoutsStore()
 
   defineProps<Props>()
 
