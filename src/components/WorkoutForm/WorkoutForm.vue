@@ -29,6 +29,7 @@
 
   import { onMounted, ref } from 'vue'
   import { storeToRefs } from 'pinia'
+  import { watch } from 'vue'
 
   interface Props {
     dayId: DayId
@@ -56,6 +57,10 @@
 
   onMounted(() => {
     fetchWorkout(workouts.value, props.dayId, props.workoutId)
+  })
+
+  watch(workouts.value, () => {
+    localStorage.setItem('workouts', JSON.stringify(workouts.value))
   })
 </script>
 

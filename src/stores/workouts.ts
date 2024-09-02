@@ -1,13 +1,18 @@
 import { defineStore } from 'pinia'
 import { v4 as uuidv4 } from 'uuid'
-
 import { DayId, Workout, WorkoutWeek } from '@/types/workout'
 import { workoutsInitialState } from '@/utils/workout'
 
 export const useWorkoutsStore = defineStore('workouts', {
-  state: () => ({
-    workouts: workoutsInitialState as WorkoutWeek
-  }),
+  state: () => {
+    const storedWorkouts = localStorage.getItem('workouts')
+
+    return {
+      workouts: storedWorkouts
+        ? (JSON.parse(storedWorkouts) as WorkoutWeek)
+        : workoutsInitialState
+    }
+  },
   actions: {
     addWorkout(dayId: DayId) {
       this.workouts[dayId].workouts.push({
