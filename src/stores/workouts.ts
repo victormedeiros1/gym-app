@@ -2,11 +2,11 @@ import { defineStore } from 'pinia'
 import { v4 as uuidv4 } from 'uuid'
 
 import { DayId, Workout, WorkoutWeek } from '@/types/workout'
-import { initialStateOfWorkouts } from '@/utils/workout'
+import { workoutsInitialState } from '@/utils/workout'
 
 export const useWorkoutsStore = defineStore('workouts', {
   state: () => ({
-    workouts: initialStateOfWorkouts as WorkoutWeek
+    workouts: workoutsInitialState as WorkoutWeek
   }),
   actions: {
     addWorkout(dayId: DayId) {

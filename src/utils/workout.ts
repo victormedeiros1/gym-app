@@ -1,6 +1,13 @@
-import { WorkoutWeek } from '@/types/workout'
+import { Workout, WorkoutWeek } from '@/types/workout'
 
-export const initialStateOfWorkouts: WorkoutWeek = {
+export const workoutInitialState: Workout = {
+  id: '',
+  name: '',
+  series: 0,
+  repetitions: 0
+}
+
+export const workoutsInitialState: WorkoutWeek = {
   monday: {
     id: 'monday',
     name: 'Segunda-feira',

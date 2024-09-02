@@ -3,15 +3,15 @@
     <div class="workout-form__group">
       <input
         class="workout-form__input workout-form__input--name"
-        v-model="dataOfWorkout.name"
+        v-model="workout.name"
       />
       <input
         class="workout-form__input workout-form__input--series"
-        v-model="dataOfWorkout.series"
+        v-model="workout.series"
       />
       <input
         class="workout-form__input workout-form__input--repetitions"
-        v-model="dataOfWorkout.repetitions"
+        v-model="workout.repetitions"
       />
 
       <button @click="removeWorkout(dayId, workout.id)">
@@ -22,22 +22,41 @@
 </template>
 
 <script setup lang="ts">
-  import { DayId, Workout } from '@/types/workout'
+  import { DayId, Workout, WorkoutWeek } from '@/types/workout'
 
+  import { workoutInitialState } from '@/utils/workout'
   import { useWorkoutsStore } from '@/stores/workouts'
 
-  import { ref } from 'vue'
+  import { onMounted, ref } from 'vue'
+  import { storeToRefs } from 'pinia'
 
   interface Props {
     dayId: DayId
-    workout: Workout
+    workoutId: string
   }
 
   const { removeWorkout } = useWorkoutsStore()
 
   const props = defineProps<Props>()
 
-  const dataOfWorkout = ref<Workout>(props.workout)
+  const { workouts } = storeToRefs(useWorkoutsStore())
+
+  const workout = ref<Workout>(workoutInitialState)
+
+  const fetchWorkout = (
+    workouts: WorkoutWeek,
+    dayId: DayId,
+    workoutId: string
+  ): void => {
+    workout.value =
+      workouts[dayId].workouts.find(
+        (workout: Workout) => workout.id === workoutId
+      ) ?? workoutInitialState
+  }
+
+  onMounted(() => {
+    fetchWorkout(workouts.value, props.dayId, props.workoutId)
+  })
 </script>
 
 <style scoped lang="scss">

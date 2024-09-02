@@ -20,7 +20,7 @@
         v-for="workout in day.workouts"
         :key="workout.id"
         :dayId="day.id"
-        :workout="workout"
+        :workoutId="workout.id"
       />
 
       <div class="dropdown__footer">
